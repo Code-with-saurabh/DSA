@@ -75,10 +75,28 @@ public class AllArrayShort{
 		}
 		return i+1;
 	}
+	public int[] leftRotate(int[] arr){
+		int temp = arr[0];
+		for(int i=0;i<arr.length-1;i++){
+			arr[i] = arr[i+1];
+			arr[i+1] = temp;
+		}
+		return arr;
+	}
+	public int[] leftRotateBs(int[] arr){
+		int temp = arr[0];
+		for(int i=1;i<arr.length;i++){
+			arr[i-1] = arr[i];
+		}
+		arr[arr.length-1] = temp;
+		return arr;
+	}
+	
 	public static void main(String[] arg){
 		// System.out.println("Let's Go!!");
 		// int[] arr = {12,15,12,7,9};
-		int[] arr = {1,1,2,2,2,3,3,4,4,4,5,6};
+		int[] arr = {1,2,3,4,5};
+		// int[] arr = {1,1,2,2,2,3,3,4,4,4,5,6};
 		
 		AllArrayShort a = new AllArrayShort();
 		
@@ -106,7 +124,17 @@ public class AllArrayShort{
 		}
 		int[] arr2 = {12,45,67,23};
 		System.out.println(a.isShorted(arr2));*/
-		System.out.println("Actual Total Number of Elements int the array are : "+a.removeDuplicates(arr));
+		// System.out.println("Actual Total Number of Elements int the array are : "+a.removeDuplicates(arr));
+		int[] LR = a.leftRotate(arr);
+		for(int i : LR){
+			System.out.println(i);
+		}
+		int[] arr1 = {1,2,3,4,5};
+		System.out.println("\n\n");
+		int[] LRBs = a.leftRotateBs(arr1);
+		for(int i : LRBs){
+			System.out.println(i);
+		}
 		
 	}
 }
