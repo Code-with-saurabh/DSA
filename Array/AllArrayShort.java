@@ -56,6 +56,15 @@ public class AllArrayShort{
 		}
 		return arr;
 	}
+	public boolean isShorted(int[] arr){
+		for(int i=0;i<arr.length-1;i++){
+			if(arr[i]>=arr[i+1]){
+			}else{
+				return false;
+			}
+		}
+		return true;
+	}
 	public static void main(String[] arg){
 		// System.out.println("Let's Go!!");
 		int[] arr = {12,15,12,7,9};
@@ -84,6 +93,8 @@ public class AllArrayShort{
 		for(int i=0;i<shortArr.length;i++){
 			System.out.println(shortArr[i]);
 		}
+		int[] arr2 = {12,45,67,23};
+		System.out.println(a.isShorted(arr2));
 		
 	}
 }
